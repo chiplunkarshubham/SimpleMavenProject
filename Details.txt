@@ -1,0 +1,26 @@
+mvn archetype:generate
+
+Goals:
+mvn clean compile exec:java: to run the java code
+mvn package: to create war or jar file specified in <packaging> line number 10 in pom.xml
+
+For packaging as .war we need an additional plugin(imp param here is failOnMissingWebXml), for jar its already there
+    <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+    </plugin>
+
+Plugin needed to execute java, important param here is mainClass
+    <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+            <mainClass>war.App</mainClass>
+        </configuration>
+    </plugin>
+
+

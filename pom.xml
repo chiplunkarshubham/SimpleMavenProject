@@ -31,14 +31,14 @@
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
-        <plugin><!-- To create war we need this, and imp param here is failOnMissingWebXml -->
+        <plugin>
           <artifactId>maven-war-plugin</artifactId>
           <version>2.4</version>
           <configuration>
             <failOnMissingWebXml>false</failOnMissingWebXml>
           </configuration>
         </plugin>
-        <plugin><!-- Plugin to execute java, important param here is mainClass -->
+        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>3.0.0</version>
@@ -89,5 +89,3 @@
     </pluginManagement>
   </build>
 </project>
-<!-- mvn clean compile exec:java: to run the java code -->
-<!-- mvn package: to create war or jar file specified in <packaging> line number 10-->
